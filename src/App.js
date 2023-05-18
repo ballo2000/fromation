@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Applayout from "./core/Applayout";
+import LandingPage from "./page/LandingPage";
+import { Routes, Route } from "react-router-dom";
+import SavedPage from "./page/SavedPage";
+import ServicesPage from "./page/ServicesPage";
+import ContacgtPage from "./page/ContacgtPage";
+import InfographiePage from "./page/InfographiePage";
+import InformatiquePage from "./page/InformatiquePage";
+import MaintenanceInfoPage from "./page/MaintenanceInfoPage";
+import ComptabilitePage from "./page/ComptabilitePage";
+import CommunicationDigPage from "./page/CommunicationDigPage";
+import AideSoignantePage from "./page/AideSoignantePage";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route to="" element={<Applayout />}>
+        <Route path="/" element={<LandingPage />}></Route>
+        <Route path="/services" element={<ServicesPage />}></Route>
+        <Route path="/infographie" element={<InfographiePage />}></Route>
+        <Route path="/informatique" element={<InformatiquePage />}></Route>
+        <Route path="/maintenance" element={<MaintenanceInfoPage />}></Route>
+        <Route path="/comptabilite" element={<ComptabilitePage />}></Route>
+        <Route path="/communication" element={<CommunicationDigPage />}></Route>
+        <Route path="/soignante" element={<AideSoignantePage />}></Route>
+        <Route path="/contact" element={<ContacgtPage />}></Route>
+        <Route path="/save" element={<SavedPage />}></Route>
+      </Route>
+    </Routes>
   );
 }
 
